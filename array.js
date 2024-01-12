@@ -80,3 +80,40 @@
     console.log(type);
     console.log(Array.isArray(fruits));
 }
+
+//array methods
+
+/*
+Basic Array Methods
+Array length
+Array toString()
+Array at()
+Array join()
+Array pop()
+Array push()
+Array shift()
+Array unshift()
+Array delete()
+Array concat()
+Array copyWithin()
+Array flat()
+Array splice()
+Array toSpliced()
+Array slice()
+
+See Also:
+Search Methods
+Sort Methods
+Iteration Methods	
+*/
+
+//Array.at(index) method
+//this method is as same as accessing array element by index
+{
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let fruit = fruits.at(2); //same as fruits[2]
+    console.log(fruit);
+    console.log(fruits[-1]); //undefined. Unlike other programming languages, JavaScript doesn't support negative indexing
+    //to solve this negative indexing problem use Array.at(index) method
+    console.log(fruits.at(-1));
+}
