@@ -117,3 +117,12 @@ Iteration Methods
     //to solve this negative indexing problem use Array.at(index) method
     console.log(fruits.at(-1));
 }
+
+//Array.join("string separator")
+//Array.join(number separator)
+{
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    console.log(fruits.join()); //joins elements by comma(,)
+    console.log(fruits.join("*")); //joins elements by asterisk(*), which is a string
+    console.log(fruits.join(5)); //joins elements by 5, which is a number
+}
