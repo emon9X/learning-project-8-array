@@ -126,3 +126,22 @@ Iteration Methods
     console.log(fruits.join("*")); //joins elements by asterisk(*), which is a string
     console.log(fruits.join(5)); //joins elements by 5, which is a number
 }
+
+//Array.pop() method
+//this method actually changes the array
+//this method returns the popped element
+{
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let poppedFruit = fruits.pop();
+    console.log(fruits);
+    console.log(poppedFruit);
+}
+
+//Array.push() method
+//push method returns the new length of the array
+{
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let length = fruits.push("Kiwi");
+    console.log(fruits);
+    console.log(length);
+}
