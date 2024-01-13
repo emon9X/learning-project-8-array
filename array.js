@@ -203,10 +203,24 @@ Iteration Methods
 //The copyWithin() method overwrites the existing values.
 //The copyWithin() method does not add items to the array.
 //The copyWithin() method does not change the length of the array.
+//this method actually changes the array
 
 {
-    const fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papya"];
+    const fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
     //positiveIndex=   0          1        2        3        4       5
-    //negativeIndes=   -6         -5       -4       -3       -2      -1
-    console.log(fruits.copyWithin())
+    //negativeIndex=   -6         -5       -4       -3       -2      -1
+    console.log(fruits);
+    // console.log(fruits.copyWithin(2, 4)); //copy at index 2 (Apple), copy from index 4 (Kiwi) to last 
+    // console.log(fruits);
+    // console.log(fruits.copyWithin(1, 2, 4)); //copy at index 1(Orange), copy from index 2(Apple), to index 3
+    console.log(fruits.copyWithin(2, -3, -1))
+}
+
+//Array.flat() method
+//Flattening an array is the process of reducing the dimensionality of an array.
+//Flattening is useful when you want to convert a multi-dimensional array into a one-dimensional array.
+{
+    const myArr = [[1, 2], [3, 4], [5, 6]];
+    const newArr = myArr.flat();
+    console.log(newArr);
 }
