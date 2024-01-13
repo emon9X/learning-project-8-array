@@ -207,5 +207,6 @@ Iteration Methods
 {
     const fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papya"];
     //positiveIndex=   0          1        2        3        4       5
+    //negativeIndes=   -6         -5       -4       -3       -2      -1
     console.log(fruits.copyWithin())
 }
