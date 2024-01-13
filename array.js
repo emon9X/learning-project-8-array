@@ -145,3 +145,67 @@ Iteration Methods
     console.log(fruits);
     console.log(length);
 }
+
+//Array.shift() method
+//same as Array.pop() method
+//it returns the first element whic is shifted out
+{
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let fruit = fruits.shift();
+    console.log(fruits);
+    console.log(fruit);
+}
+
+//Array.unshift() method
+//same as Array.push() method
+//it returns the length of the new array
+{
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let length = fruits.unshift("Kiwi");
+    console.log(fruits);
+    console.log(length);
+}
+
+//delete
+//Using delete() leaves undefined holes in the array.
+//Use pop() or shift() instead.
+
+{
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let fruit = delete fruits[0]; //makes Array[0] undefined
+    console.log(fruits);
+    console.log(fruits[0]);
+}
+
+//Array.concat(array)
+//it creates new array
+{
+    const myGirls = ["Cecilie", "Lone"];
+    const myBoys = ["Emil", "Tobias", "Linus"];
+
+    const newArray = myGirls.concat(myBoys);
+    console.log(newArray);
+}
+{
+    const arr1 = ["Cecilie", "Lone"];
+    const arr2 = ["Emil", "Tobias", "Linus"];
+    const arr3 = ["Robin", "Morgan"];
+    const myChildren = arr1.concat(arr2, arr3);
+    console.log(myChildren);
+}
+{
+    const arr1 = ["Emil", "Tobias", "Linus"];
+    const myChildren = arr1.concat("Peter");
+    console.log(myChildren);
+}
+
+//Array.copyWithin(copy at index, copy from index, to copy before index)
+//The copyWithin() method overwrites the existing values.
+//The copyWithin() method does not add items to the array.
+//The copyWithin() method does not change the length of the array.
+
+{
+    const fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papya"];
+    //positiveIndex=   0          1        2        3        4       5
+    console.log(fruits.copyWithin())
+}
