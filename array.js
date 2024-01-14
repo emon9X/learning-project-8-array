@@ -224,3 +224,26 @@ Iteration Methods
     const newArr = myArr.flat();
     console.log(newArr);
 }
+
+//Array.splice(index at where elements will be added, how many elements will be deleted, new element 1, new element 2,...... )
+// splice method adds new element in an array
+//splice method also removes element from an array without creating holes (unlike delete keyword)
+//it alters the main array
+//splice method returns an array of deleted elements
+{
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // let addedFruits = fruits.splice(1,0, "Kiwi", "Papaya", "Lemon")
+    // console.log(fruits);
+    // console.log(addedFruits);
+    let addedFruits2 = fruits.splice(1,2, "Kiwi", "Papaya", "Lemon")
+    console.log(fruits);
+    console.log(addedFruits2);
+}
+
+//removing elements by splice method
+{
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let removedFruits = fruits.splice(2, 2);
+    console.log(fruits);
+    console.log(removedFruits);
+}
