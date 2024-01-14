@@ -247,3 +247,13 @@ Iteration Methods
     console.log(fruits);
     console.log(removedFruits);
 }
+
+//Array.toSpliced() method
+//safely removes elements from an array 
+//it creates new array, keeping the main array unchanged
+{
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // let removedFruits = fruits.toSpliced(1,2);
+    console.log(fruits);
+    // console.log(removedFruits);
+}
