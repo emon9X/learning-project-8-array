@@ -273,3 +273,122 @@ Iteration Methods
     const sliced = fruits.slice(1,4);
     console.log(sliced);
 }
+
+//Array search methods
+/*
+Array indexOf()
+Array lastIndexOf()
+Array includes()
+Array find()
+Array findIndex()
+Array findLast()
+Array findLastIndex()
+*/
+
+//Array.indexOf(element, search from index) method
+// Array.indexOf() returns -1 if the item is not found.
+// If the item is present more than once, it returns the index of the first occurrence.
+//searching direction: from left to right []---------------->[]
+{
+    const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango", NaN];
+    console.log(fruits.indexOf("Apple"))
+    console.log(fruits.indexOf("Apple", 2))
+    console.log(fruits.indexOf("Apple", 4))
+    console.log(fruits.indexOf("Apple", -3))
+    console.log(fruits.indexOf("Apple", -1))
+    console.log(fruits.indexOf(NaN)); //why does it returns -1, though the array includes NaN.
+}
+
+//Array.lastIndexOf(element, search from index) 
+//It returns the index of last occurrence
+//searching direction: from right to left []<------------------[]
+
+{
+    const num = [1,2, 3, 4, 2, 4, 3, 1, NaN];
+    console.log(num.lastIndexOf(1));
+    console.log(num.lastIndexOf(2, 2));
+    console.log(num.lastIndexOf(2));
+    console.log(num.lastIndexOf(2, -8));
+    console.log(num.lastIndexOf(2, -6));
+}
+
+//Array.includes(element)
+{
+    const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango", NaN];
+    console.log(fruits.includes("Mango"));
+    console.log(fruits.includes(NaN));
+}
+
+//Array.find(function)
+//it returns the first value/ first occurrence on the basis of the given condition
+//searching direction: from left to right []---------------->[]
+{
+    const numbers = [42, 30, 28, 98, 54];
+    let number = numbers.find(x => x < 54); //first occurrence is 42
+    console.log(number);
+    let number2 = numbers.find(x => x < 100); //first occurrence is 42 
+    console.log(number2);
+}
+
+{
+    const numbers = [42, 30, 28, 98, 54];
+    let number = numbers.find(function myNumber(x) {
+        return x < 54
+    })
+    console.log(number);
+}
+
+{
+    const numbers = [42, 30, 28, 98, 54];
+    let number = numbers.find(myfunction);
+    console.log(number);
+    function myfunction (x) {
+        return x < 54
+    }
+}
+
+//Array.findIndex(function)
+//it returns the index of first value/ first occurrence on the basis of the given condition
+//searching direction: from left to right []---------------->[]
+{
+    const numbers = [42, 30, 28, 98, 54];
+    let number = numbers.findIndex(x => x < 54); //first occurrence is 42
+    console.log(number);
+    let number2 = numbers.findIndex(x => x < 100); //first occurrence is 42 
+    console.log(number2);
+}
+
+{
+    const numbers = [42, 30, 28, 98, 54];
+    let number = numbers.findIndex(function myNumber(x) {
+        return x < 54
+    })
+    console.log(number);
+}
+
+{
+    const numbers = [42, 30, 28, 98, 54];
+    let number = numbers.findIndex(myfunction);
+    console.log(number);
+    function myfunction (x) {
+        return x < 54
+    }
+}
+
+//Array.findLast(function)
+//it returns the first value/ first occurrence on the basis of the given condition by searching from end to start
+//searching direction: from right to left []<------------------[]
+{
+    const temp = [27, 28, 30, 40, 42, 41, 30];
+    let h = temp.findLast(x => x > 40 )
+    console.log(h);
+}
+
+//Array.findLastIndex(function)
+//it returns the index of first value/ first occurrence on the basis of the given condition by searching from end to start
+//searching direction: from right to left []<------------------[]
+{
+    const temp = [27, 28, 30, 40, 42, 41, 30];
+    let h = temp.findLastIndex(x => x > 40 )
+    console.log(h);
+}
