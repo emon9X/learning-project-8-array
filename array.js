@@ -511,8 +511,44 @@ Home made Max()
 }
 
 // Find the Lowest (or Highest) Array Value
-// To find the lowest or highest valu you have 3 options:
+// To find the lowest or highest value you have 3 options:
 
 // #Sort the array and read the first or last element
 // #Use Math.min() or Math.max()
 // #Write a home made function
+
+// finding maximum and minimum by sorting 
+
+{
+    const numbers = [25, 100, 65, 105, 205, 98, 9, 8];
+    const sortedNumbers = numbers.toSorted((a, b) => a - b);
+    const min = sortedNumbers[0];
+    const max = sortedNumbers[numbers.length - 1];
+    console.log("min: ", min, " ", "max: ", max)
+    console.log(sortedNumbers);
+}
+
+// Math.min(), Math.max() method
+
+{
+    const numbers = [25, 100, 65, 105, 205, 98, 9, 8];
+    console.log(Math.min.apply(null, numbers));
+    console.log(Math.max.apply(null, numbers));
+}
+
+//find max and min by home made function
+{
+    function max(array) {
+        let maxValue = [0];
+        for (let number of array) {
+            if (number >= maxValue[0]) {
+                maxValue[0] = number
+            }
+        }
+        return maxValue[0];
+    }
+
+    const numbers = [25, 100, 65, 105, 205, 98, 9, 8];
+    console.log(max(numbers));
+
+}
