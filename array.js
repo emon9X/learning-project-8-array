@@ -236,7 +236,7 @@ Iteration Methods
     // let addedFruits = fruits.splice(1,0, "Kiwi", "Papaya", "Lemon")
     // print(fruits);
     // print(addedFruits);
-    let addedFruits2 = fruits.splice(1,2, "Kiwi", "Papaya", "Lemon")
+    let addedFruits2 = fruits.splice(1, 2, "Kiwi", "Papaya", "Lemon")
     print(fruits);
     print(addedFruits2);
 }
@@ -254,7 +254,7 @@ Iteration Methods
 //it creates new array, keeping the main array unchanged
 {
     const fruits = ["Banana", "Orange", "Apple", "Mango"];
-    let removedFruits = fruits.toSpliced(1,2);
+    let removedFruits = fruits.toSpliced(1, 2);
     print(fruits);
     print(removedFruits);
 }
@@ -270,7 +270,7 @@ Iteration Methods
 }
 {
     const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
-    const sliced = fruits.slice(1,4);
+    const sliced = fruits.slice(1, 4);
     console.log(sliced);
 }
 
@@ -304,7 +304,7 @@ Array findLastIndex()
 //searching direction: from right to left []<------------------[]
 
 {
-    const num = [1,2, 3, 4, 2, 4, 3, 1, NaN];
+    const num = [1, 2, 3, 4, 2, 4, 3, 1, NaN];
     console.log(num.lastIndexOf(1));
     console.log(num.lastIndexOf(2, 2));
     console.log(num.lastIndexOf(2));
@@ -342,7 +342,7 @@ Array findLastIndex()
     const numbers = [42, 30, 28, 98, 54];
     let number = numbers.find(myfunction);
     console.log(number);
-    function myfunction (x) {
+    function myfunction(x) {
         return x < 54
     }
 }
@@ -370,7 +370,7 @@ Array findLastIndex()
     const numbers = [42, 30, 28, 98, 54];
     let number = numbers.findIndex(myfunction);
     console.log(number);
-    function myfunction (x) {
+    function myfunction(x) {
         return x < 54
     }
 }
@@ -380,7 +380,7 @@ Array findLastIndex()
 //searching direction: from right to left []<------------------[]
 {
     const temp = [27, 28, 30, 40, 42, 41, 30];
-    let h = temp.findLast(x => x > 40 )
+    let h = temp.findLast(x => x > 40)
     console.log(h);
 }
 
@@ -389,7 +389,7 @@ Array findLastIndex()
 //searching direction: from right to left []<------------------[]
 {
     const temp = [27, 28, 30, 40, 42, 41, 30];
-    let h = temp.findLastIndex(x => x > 40 )
+    let h = temp.findLastIndex(x => x > 40)
     console.log(h);
 }
 
@@ -469,5 +469,50 @@ Home made Max()
 
 {
     const numbers = [25, 100, 65, 105, 205, 98, 9, 8];
-    console.log(numbers.toSorted(function (a, b) {return a - b})); //sorting in ascending order
+    console.log(numbers.toSorted(function (a, b) { return a - b })); //sorting in ascending order
+
+    {
+        //how does it work
+        const newArray = [...numbers];
+        for (let k = 0; k < numbers.length - 1; k++) {
+            for (let i = 0; i < numbers.length - 1; i++) {
+                if (newArray[i] - newArray[i + 1] > 0) {
+                    let a
+                    a = newArray[i];
+                    newArray[i] = newArray[i + 1];
+                    newArray[i + 1] = a;
+                }
+            }
+        }
+        console.log(newArray)
+    }
+    console.log(numbers.toSorted(function (a, b) { return b - a })); //sorting in descending order
 }
+
+//Array elements random placing
+//Array.sort(function(){return 0.5 - Math.random()})
+
+{
+    const numbers = [25, 100, 65, 105, 205, 98, 9, 8];
+    console.log(numbers.sort(function () { return 0.5 - Math.random() })); //not accurate method
+}
+
+//The Fisher Yates Method
+{
+    const points = [40, 100, 1, 5, 25, 10];
+
+    for (let i = points.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let k = points[i];
+        points[i] = points[j];
+        points[j] = k;
+    }
+    console.log(points)
+}
+
+// Find the Lowest (or Highest) Array Value
+// To find the lowest or highest valu you have 3 options:
+
+// #Sort the array and read the first or last element
+// #Use Math.min() or Math.max()
+// #Write a home made function
