@@ -392,3 +392,82 @@ Array findLastIndex()
     let h = temp.findLastIndex(x => x > 40 )
     console.log(h);
 }
+
+//Array sort method
+
+/*
+Alpabetic Sort
+
+Array sort()
+Array reverse()
+Array toSorted()
+Array toReversed()
+Sorting Objects
+*/
+
+//Array.sort() method
+//The sort() method sorts an array alphabetically
+//it changes the main array
+
+{
+    const fruits = ["Banana", "Orange", "Apple", "Mango", "Apricot"];
+    console.log(fruits.sort());
+}
+
+//Array.reverse()
+//it changes the main array
+{
+    const fruits = ["Banana", "Orange", "Apple", "Mango", "Apricot"];
+    console.log(fruits.sort().reverse()); //reverse sorting
+}
+
+//Array.toSorted()
+//it keeps the original array unchanged
+
+{
+    const fruits = ["Banana", "Orange", "Apple", "Mango", "Apricot"];
+    const sortedFruits = fruits.toSorted();
+    console.log(sortedFruits);
+    console.log(fruits);
+}
+
+//Array.toReversed()
+//it keeps the original array unchanged
+//Array.toSorted()
+//it keeps the original array unchanged
+
+{
+    const fruits = ["Banana", "Orange", "Apple", "Mango", "Apricot"];
+    const sortedFruits = fruits.toSorted().toReversed();
+    console.log(sortedFruits);
+    console.log(fruits);
+}
+
+/*
+Numeric sort
+
+Numeric Sort
+Random Sort
+Math.min()
+Math.max()
+Home made Min()
+Home made Max()
+*/
+
+//Array.sort()
+// By default, the sort() function sorts values as strings.
+// This works well for strings ("Apple" comes before "Banana").
+// If numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".
+// Because of this, the sort() method will produce incorrect result when sorting numbers.
+
+{
+    const numbers = [25, 100, 65, 105, 205, 98, 9, 8];
+    console.log(numbers.toSorted()); //sorted alphabetically not numerically
+}
+
+//to solve this problem an compare function must be provided
+
+{
+    const numbers = [25, 100, 65, 105, 205, 98, 9, 8];
+    console.log(numbers.toSorted(function (a, b) {return a - b})); //sorting in ascending order
+}
