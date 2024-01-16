@@ -583,28 +583,3 @@ Home made Max()
 
 }
 
-//Array iteration method\
-/*
-Array forEach()
-Array map()
-Array flatMap()
-Array filter()
-Array reduce()
-Array reduceRigth()
-Array every()
-Array some()
-Array from()
-Array keys()
-Array entries()
-Array with()
-Array Spread (...)
-*/
-
-//Array.forEach(callback function)
-//forEach method performs an operation on every element of an array based on a given callback function
-{
-    const numbers = [45, 4, 9, 16, 25];
-    const output = numbers.forEach(function showInLIne(x){
-        console.log(`this is ${numbers.indexOf(x)+1} th element: ${x}`);
-    })
-}
