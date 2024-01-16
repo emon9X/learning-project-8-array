@@ -552,3 +552,33 @@ Home made Max()
     console.log(max(numbers));
 
 }
+
+
+//sortin array object elements
+{
+    const myArr = [
+        { name: "X00", price: 200 },
+        { name: "X01", price: 100 },
+        { name: "X02", price: 180 },
+        { name: "X03", price: 120 },
+        { name: "X04", price: 190 },
+        { name: "X05", price: 110 },
+        { name: "X06", price: 110 },
+        { name: "X07", price: 110 },
+        { name: "X08", price: 120 },
+        { name: "X09", price: 120 },
+        { name: "X10", price: 126 },
+        { name: "X11", price: 120 },
+        { name: "X12", price: 130 },
+        { name: "X13", price: 139 },
+        { name: "X14", price: 130 },
+        { name: "X15", price: 130 },
+        { name: "X16", price: 140 },
+        { name: "X17", price: 150 },
+        { name: "X18", price: 140 },
+        { name: "X19", price: 170 }
+    ];
+
+    console.log(myArr.toSorted((a, b) => a.price - b.price))
+
+}
