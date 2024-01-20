@@ -15,7 +15,7 @@ Array with()
 Array Spread (...)
 */
 
-//Array.forEach(callback function)
+//Array.forEach(callback function(element, index, array))
 //forEach method performs an operation on every element of an array based on a given callback function
 //it doesn't return something explicitly
 {
@@ -26,7 +26,7 @@ Array Spread (...)
     console.log(output);
 }
 
-//Array.map(function) method
+//Array.map(function(element, index, array)) method
 //it creates new array. That means it returns an array unlike forEach method
 {
     const numbers = [1, 4, 9, 16, 25, 36];
@@ -42,4 +42,26 @@ Array Spread (...)
     console.log(letters);
     const latter = words.map(word => word.split(''))
     console.log(latter);
+}
+
+//Array.filter(function(element, index, array))
+//creates new array of elements that pass the test
+
+{
+    const numbers = [45, 5, 6, 12, 18, 20, 31];
+    const newArray = numbers.filter(number => number > 13);
+    console.log(newArray);
+}
+
+//Array.reduce(function(total/initial value/previously returned value/, element, index, array))
+//The reduce() method runs a function on each array element to produce (reduce it to) a single value.
+//The reduce() method works from left-to-right in the array.
+
+{
+    const numbers = [1, 2, 3, 6, 10];
+    const sum = numbers.reduce((x, y) => {
+        console.log(x, y);
+        return x+y; //reduced to single value
+    })
+    console.log(sum);
 }
