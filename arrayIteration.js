@@ -65,3 +65,35 @@ Array Spread (...)
     })
     console.log(sum);
 }
+
+//Array.reduce(function(total/initial value/previously returned value/, element, index, array))
+//reduceRight() runs opposite direction of reduce() method
+
+{
+    const numbers = [1, 2, 3, 6, 10];
+    const sum = numbers.reduceRight((x, y) => {
+        console.log(x, y);
+        return x+y; //reduced to single value
+    })
+    console.log(sum);
+}
+
+//Array.every(function(element, index, array))
+//it e returns a boolean value
+//if every element passes the test then it returns true
+
+{
+    const numbers = [45, 4, 9, 16, 25];
+    const ifTrue = numbers.every(x => x < 45);
+    console.log(ifTrue);
+}
+
+//Array.some(function(element, index, array))
+//it e returns a boolean value
+//if some of the elements pass the test then it returns true
+
+{
+    const numbers = [45, 4, 9, 16, 25];
+    const ifTrue = numbers.some(x => x < 8);
+    console.log(ifTrue);
+}
