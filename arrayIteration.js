@@ -97,3 +97,35 @@ Array Spread (...)
     const ifTrue = numbers.some(x => x < 8);
     console.log(ifTrue);
 }
+
+//Array.from(array, mapFunction, thisArg )
+//The Array.from() method returns an Array object from any object with a length property or any iterable object.
+
+
+//returning an array object from string as string has length property
+
+{
+    const name = "Ron DeSantis";
+    const array = Array.from(name);
+    console.log(array);
+}
+
+//returning a new array from an array after some operation
+
+{
+    const numbers = [5, 2, 6, 2, 4];
+    const newArray = Array.from(numbers, x => x - 2);
+    console.log(newArray);
+}
+
+//returning a new array from an array after some operation using thisArg parameter
+
+{
+    const numbers = [5, 2, 6, 2, 4];
+    const newArray = Array.from(numbers, subtraction, {reduce : 2});
+
+    function subtraction(x) {
+        return x - this.reduce
+    }
+    console.log(newArray);
+}
