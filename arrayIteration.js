@@ -61,7 +61,7 @@ Array Spread (...)
     const numbers = [1, 2, 3, 6, 10];
     const sum = numbers.reduce((x, y) => {
         console.log(x, y);
-        return x+y; //reduced to single value
+        return x + y; //reduced to single value
     })
     console.log(sum);
 }
@@ -73,7 +73,7 @@ Array Spread (...)
     const numbers = [1, 2, 3, 6, 10];
     const sum = numbers.reduceRight((x, y) => {
         console.log(x, y);
-        return x+y; //reduced to single value
+        return x + y; //reduced to single value
     })
     console.log(sum);
 }
@@ -122,10 +122,56 @@ Array Spread (...)
 
 {
     const numbers = [5, 2, 6, 2, 4];
-    const newArray = Array.from(numbers, subtraction, {reduce : 2});
+    const newArray = Array.from(numbers, subtraction, { reduce: 2 });
 
     function subtraction(x) {
         return x - this.reduce
     }
+    console.log(newArray);
+}
+
+
+//Array.keys()
+//returns array iterator object
+{
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    const keys = fruits.keys();
+    console.log(keys);
+    //here keys is an array. Its elements are indexes of the main array.
+    for (let x of keys) {
+        console.log(x);
+    }
+}
+
+//Array.entries()
+//returns key value pair
+{
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    const pairs = fruits.entries();
+    console.log(pairs);
+    for (let x of pairs) {
+        console.log(x);
+    }
+}
+
+//Array.with(index, replacing value)
+//safely updates elements of an array
+{
+    const months = ["Januar", "Februar", "Mar", "April"];
+    const newMonths = months.with(2, "March");
+    console.log(months);
+    console.log(newMonths);
+}
+
+//array spread(...)
+//copies array
+
+{
+    const q1 = ["Jan", "Feb", "Mar"];
+    const q2 = ["Apr", "May", "Jun"];
+    const q3 = ["Jul", "Aug", "Sep"];
+    const q4 = ["Oct", "Nov", "May"];
+
+    const newArray = [...q1,...q2,...q3,...q4];
     console.log(newArray);
 }
